@@ -46,4 +46,4 @@
   return sumIndex;
 };
 
-// module.exports = twoSum;
+module.exports = twoSum;
