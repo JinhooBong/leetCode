@@ -24,6 +24,26 @@
  * output: [0, 1]
  */
 
- var twoSum = function(nums, target) {
+ let twoSum = function(nums, target) {
+  // TO-DO: implement me
 
+  // variable to store indices
+  let sumIndex = [];
+
+  // iterate through the array
+  for (let i = 0; i < nums.length; i++) {
+    // for current index, iterate through the array, and check if any of the sums makes target
+    let currentIndex = i;
+    for (let j = currentIndex + 1; j < nums.length; j++) {
+      if (nums[currentIndex] + nums[j] === target) {
+        // if they make target, push index values to variable
+        sumIndex.push(currentIndex);
+        sumIndex.push(j);
+      }
+    }
+  }
+
+  return sumIndex;
 };
+
+// module.exports = twoSum;
