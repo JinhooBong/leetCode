@@ -10,4 +10,16 @@ describe('Longest Common Prefix Test', () => {
         expect(longestCommonPrefix(["dog", "racecar", "car"])).toBe("");
     });
 
+    it('Should return "fl" for ["flower", "flow", "flight"]', () => {
+        expect(longestCommonPrefix(["flower", "flow", "flight"])).toBe("fl");
+    });
+
+    it('Should return whole word for same words', () => {
+        expect(longestCommonPrefix(["test", "test"])).toBe("test");
+    });
+
+    it('Should return "a" for ["apple", "alabama", "ape"]', () => {
+        expect(longestCommonPrefix(["apple", "alabama", "ape"])).toBe("a");
+    })
+
 });

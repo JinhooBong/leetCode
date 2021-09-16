@@ -24,12 +24,15 @@
     // we grab the first letter of the first string
     // iterate through the rest of the array of words, 
     // if it matches, then we keep, else we don't 
-    for (let i = 0; i < strs.length; i++) {
-        let letterIndex = 0;
-        if (strs[i][letterIndex] !== strs[i+1][letterIndex]) {
-            return "";
+    let letterIndex = 0;
+    while(letterIndex < strs[0].length) { 
+        for (let i = 0; i < strs.length - 1; i++) {
+            if (strs[i][letterIndex] !== strs[i+1][letterIndex]) {
+                return prefix;
+            }
         }
-        prefix+=strs[i][letterIndex];
+        prefix+=strs[0][letterIndex];
+        letterIndex++;
     }
 
     return prefix;
