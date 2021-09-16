@@ -24,4 +24,15 @@
     // we grab the first letter of the first string
     // iterate through the rest of the array of words, 
     // if it matches, then we keep, else we don't 
+    for (let i = 0; i < strs.length; i++) {
+        let letterIndex = 0;
+        if (strs[i][letterIndex] !== strs[i+1][letterIndex]) {
+            return "";
+        }
+        prefix+=strs[i][letterIndex];
+    }
+
+    return prefix;
 };
+
+module.exports = longestCommonPrefix;
