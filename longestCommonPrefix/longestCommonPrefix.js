@@ -18,4 +18,10 @@
 
  var longestCommonPrefix = function(strs) {
 
+    // create a variable to store the longest common prefix
+    let prefix = "";
+
+    // we grab the first letter of the first string
+    // iterate through the rest of the array of words, 
+    // if it matches, then we keep, else we don't 
 };
