@@ -22,7 +22,23 @@
  * output: 0 
  */
  var lengthOfLongestSubstring = function(s) {
+    if (s.length === 0 || s === null) {
+        return 0;
+    }
+
+    // variable to keep track of length;
+    let length = 0;
+    let uniqTracker = {};
+
+    // iterate through the string
+    // if the next letter is unique and continuous then add
     
+    for (let i = 0; i < s.length - 1; i++) {
+   
+
+    }
+
+    return length;
 };
 
 module.exports = lengthOfLongestSubstring;
