@@ -27,6 +27,9 @@
     let letterIndex = 0;
     while(letterIndex < strs[0].length) { 
         for (let i = 0; i < strs.length - 1; i++) {
+            if(strs[i].length === 0) {
+                return "";
+            }
             if (strs[i][letterIndex] !== strs[i+1][letterIndex]) {
                 return prefix;
             }

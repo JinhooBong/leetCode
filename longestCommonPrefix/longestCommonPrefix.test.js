@@ -20,6 +20,10 @@ describe('Longest Common Prefix Test', () => {
 
     it('Should return "a" for ["apple", "alabama", "ape"]', () => {
         expect(longestCommonPrefix(["apple", "alabama", "ape"])).toBe("a");
+    });
+
+    it('Should return empty for any empty string', () => {
+        expect(longestCommonPrefix(["", "this", "that"])).toBe("");
     })
 
 });
