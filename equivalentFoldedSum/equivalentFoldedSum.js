@@ -10,7 +10,22 @@
 
 
 var equivalentFoldedSums = (nums) => {
+    // variable to keep track of changes
+    let numChanges = 0;
 
+    // variable to keep track of a goal sum
+    let goalSum = nums[0] + nums[nums.length - 1];
+
+    for (let i = 0; i < nums.length; i++) {
+        if (i === nums.length / 2) {
+            return numChanges;
+        }
+        if(nums[i] + nums[nums.length - 1 -i] !== goalSum) {
+            numChanges++;
+        }
+    }
+
+    return numChanges;
 }
 
 module.exports = equivalentFoldedSums;
