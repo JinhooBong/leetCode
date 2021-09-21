@@ -29,6 +29,22 @@ var removeDuplicates = function(nums) {
   if(nums.length === 0) {
     return [];
   }
+
+  // we want to iterate through the array
+  // the moment we find a duplicate, we cut the duplicates out, and move them to the back and push the rest forward
+
+  // variable to store track of unique numbers
+  let k = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if(nums[i + 1] === nums[i]) {
+      // we want to find out how many duplicates there are,
+      // and then slice them from the array.
+    }
+  }
+
+  // return the number of unique numbers
+  return k;
 };
 
 module.exports = removeDuplicates;
