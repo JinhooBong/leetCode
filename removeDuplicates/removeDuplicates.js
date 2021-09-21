@@ -22,6 +22,8 @@
  * output: 5, nums = [0, 1, 2, 3, 4, _, _, _, _, _]
  */
 
- var removeDuplicates = function(nums) {
+var removeDuplicates = function(nums) {
 
 };
+
+module.exports = removeDuplicates;
