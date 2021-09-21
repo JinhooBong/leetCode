@@ -4,8 +4,10 @@
  */
 
 /**
- * Given an integer array nums sorted in NON-DECREASING ORDER, remove the duplicates IN-PLACE such that each unique element
- * appears only ONCE. The RELATIVE ORDER of the elements should be kept the SAME.
+ * Given an integer array nums sorted in NON-DECREASING ORDER,
+ * remove the duplicates IN-PLACE such that each unique element
+ * appears only ONCE. The RELATIVE ORDER of the elements should
+ * be kept the SAME.
  *
  * Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the FIRST PART of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of num should hold the final result. It does not matter what you leave beyond the first k elements.
  *
@@ -23,7 +25,10 @@
  */
 
 var removeDuplicates = function(nums) {
-
+  // if empty, return empty
+  if(nums.length === 0) {
+    return [];
+  }
 };
 
 module.exports = removeDuplicates;
