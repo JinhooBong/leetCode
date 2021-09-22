@@ -45,9 +45,9 @@ var maxLength = function(arr) {
             // we want to check that its unique
             let unique = true;
             let word2 = word + arr[j];
-            word = word2;
             if (!hasDuplicates(word)) {
                 uniqCombinations.push(word);
+                word = word2;
             }
         }
     }

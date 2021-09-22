@@ -31,7 +31,7 @@ describe('Unique Character String', () => {
         expect(maxLength(arr)).toBe(16);
     });
 
-    it('Should return 4', () => {
+    it('Should return 16', () => {
         let arr = ["ab","ba","cd","dc","ef","fe","gh","hg","ij","ji","kl","lk","mn","nm","op","po"];
         expect(maxLength(arr)).toBe(16);
     })
