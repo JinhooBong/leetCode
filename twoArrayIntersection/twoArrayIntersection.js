@@ -14,8 +14,25 @@
  * output: [4, 9]
  * Explanation: [9, 4] is also accepted
  */
- var intersect = function(nums1, nums2) {
+var intersect = function(nums1, nums2) {
 
+    let intersectArr = [];
+
+    if (nums1.length === 0 || nums2.length === 0) return [];
+
+    // iterate through first array
+    for (let i = 0; i < nums1.length; i++) {
+        // checks to see if nums2 contains element in nums1
+        if (nums2.indexOf(nums1[i]) !== -1) {
+            // if it doesn't equal -1, then it exists in the array
+            // if it exists, add onto result array
+            nums2[nums2.indexOf(nums1[i])] = null;
+            intersectArr.push(nums1[i]);
+        }
+    }
+
+    // return result array
+    return intersectArr;
 };
 
 module.exports = intersect;
