@@ -62,6 +62,30 @@ var removeDuplicates = function(nums) {
     }
   }
 
+  // optimal solution
+  // // set pointers
+  // let i = 0;
+  // let j = 1;
+  
+  // //  while pointer is less than array length
+  // while (j < nums.length) {
+    // // if array at first pointer is not equal to the array at second pointer
+  //   if (nums[i] !== nums[j]) {
+    // // then we increment first pointer
+  //     i++;
+    // // set the unique number to current i position
+  //     nums[i] = nums[j];
+    // // then increment j position
+  //     j++;
+  //   } else {
+    // // if the array at first pointer IS EQUAL to second pointer, just move second pointer
+  //     j++;
+  //   }
+  // }
+
+  // we return whichever position i is at, becuase this will point to the end of the unique number array
+  // return i + 1;
+
   // return the number of unique numbers
   return k;
 };
