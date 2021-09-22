@@ -36,10 +36,29 @@ var removeDuplicates = function(nums) {
   // variable to store track of unique numbers
   let k = 0;
 
+  // we can create an object to keep track of how many duplicates there are
+  let numDuplicates = {};
+
   for (let i = 0; i < nums.length; i++) {
-    if(nums[i + 1] === nums[i]) {
-      // we want to find out how many duplicates there are,
-      // and then slice them from the array.
+    if(numDuplicates[nums[i]] === undefined) {
+      numDuplicates[nums[i]] = 1;
+    } else {
+      numDuplicates[nums[i]]++;
+    }
+  }
+
+  // return Object.keys(numDuplicates).length;
+
+  for (let i = 0; i < nums.length; i++) {
+    if(nums[i] === nums[i+1]) {
+      let copies = nums.splice(i, numDuplicates[nums[i]] - 1);
+      nums.push(copies);
+    }
+  }
+
+  for (let i = 0; i < nums.length; i++) {
+    if(!Array.isArray(nums[i])) {
+      k++;
     }
   }
 
