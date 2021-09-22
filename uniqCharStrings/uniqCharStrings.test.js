@@ -23,6 +23,17 @@ describe('Unique Character String', () => {
     it('Should return 26', () => {
         let arr = ["abcdefghijklmnopqrstuvwxyz"];
         expect(maxLength(arr)).toBe(26);
+    });
+
+    it('Should return 16', () => {
+        // need to submit ALL possible subsequences
+        let arr = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"];
+        expect(maxLength(arr)).toBe(16);
+    });
+
+    it('Should return 4', () => {
+        let arr = ["ab","ba","cd","dc","ef","fe","gh","hg","ij","ji","kl","lk","mn","nm","op","po"];
+        expect(maxLength(arr)).toBe(16);
     })
 
 });

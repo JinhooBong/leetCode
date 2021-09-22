@@ -33,27 +33,26 @@ var maxLength = function(arr) {
 
     let uniqCombinations = [""];
 
+    // pushes all elements into result array because each element is unique
     for (let i = 0; i < arr.length; i++) {
         uniqCombinations.push(arr[i]);
     }
 
+    // we need to also consider putting all characters together as well
     for (let i = 0; i < arr.length; i++) {
-        let firstWord = arr[i];
+        let word = arr[i];
         for (let j = i + 1; j < arr.length; j++) {
-            let secondWord = arr[j];
-            // iterate through the first word, and check to see if the letters exist in the second word
+            // we want to check that its unique
             let unique = true;
-            for (let letter = 0; letter < firstWord.length; letter++) {
-                // if they do exist then just exit and increment j
-                if (secondWord.indexOf(firstWord[letter]) > -1) {
-                    unique = false;
-                }
-            }
-            if (unique) {
-                uniqCombinations.push(firstWord + secondWord);
+            let word2 = word + arr[j];
+            word = word2;
+            if (!hasDuplicates(word)) {
+                uniqCombinations.push(word);
             }
         }
     }
+
+    console.log(uniqCombinations);
 
     return findMaxLength(uniqCombinations);
 };
@@ -67,6 +66,13 @@ let findMaxLength = (arr) => {
     }
 
     return max;
+};
+
+// helper function to check if string has duplicates
+// returns true if duplicates exist
+// return false if all characters are unique
+let hasDuplicates = (string) => {
+    return new Set(string).size !== string.length
 }
 
 module.exports = maxLength;
