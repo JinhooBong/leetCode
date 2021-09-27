@@ -21,12 +21,6 @@ var numUniqueEmails = function(emails) {
     // input : array of emails
     // output: number of unique email addresses
 
-    
-    
-    // if the local name has a period, ignore it, and ignore + and anything after it
-    // if it equals an already existing email, dont count it
-    // else increment count
-
     // unique email array holder
     let uniqueEmails = [];
 
@@ -36,7 +30,6 @@ var numUniqueEmails = function(emails) {
         let emailAddr = emails[i].split('@');
 
         let localName = emailAddr[0];
-
         let domainName = emailAddr[1];
 
 
@@ -52,16 +45,22 @@ var numUniqueEmails = function(emails) {
         if (localName.indexOf('.') > -1) {
             // let dotIndex = localName.indexOf('.');
             // localName = localName.substring(0, dotIndex) + localName.substring(dotIndex + 1, localName.length);
+
+            // using regex to remove any instances of '.' in the name
             localName = localName.replace(/[._]/g, '');
         }
 
+        // combine the email now
         let email = localName + '@' + domainName;
 
+        // check to see if the array doesn't contain the email
         if(!uniqueEmails.includes(email)) {
+            // if so, add the email to the list
             uniqueEmails.push(email);
         }
     }
 
+    // return the length of the list
     return uniqueEmails.length;
 };
 
