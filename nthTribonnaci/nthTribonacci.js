@@ -20,11 +20,22 @@
  * output: 1389537
 */
 var tribonacci = function(n) {
-    if (n === 0) return 0;
-    if (n === 1) return 1;
-    if (n === 2) return 1;
 
-    return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
+    // constraint n <= 37 and >= 0
+
+    // Make an array F of length 38, and set F[0] = 0, F[1] = F[2] = 1.
+    let F = Array(38);
+
+    F[0] = 0;
+    F[1] = 1;
+    F[2] = 1;
+
+    // Now write a loop where you set F[n+3] = F[n] + F[n+1] + F[n+2], and return F[n].
+    for (let i = 3; i < F.length; i++) {
+        F[i] = F[i-1] + F[i-2] + F[i-3];
+    }
+
+    return F[n];
 };
 
 module.exports = tribonacci;
