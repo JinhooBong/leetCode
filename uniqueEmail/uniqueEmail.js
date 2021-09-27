@@ -18,7 +18,14 @@
  * 
  */
 var numUniqueEmails = function(emails) {
-    
+    // input : array of emails
+    // output: number of unique email addresses
+
+    // iterate through the email array
+    // split each email by '@' 
+    // if the local name has a period, ignore it, and ignore + and anything after it
+    // if it equals an already existing email, dont count it
+    // else increment count
 };
 
 module.exports = numUniqueEmails;
