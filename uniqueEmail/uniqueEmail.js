@@ -21,11 +21,48 @@ var numUniqueEmails = function(emails) {
     // input : array of emails
     // output: number of unique email addresses
 
-    // iterate through the email array
-    // split each email by '@' 
+    
+    
     // if the local name has a period, ignore it, and ignore + and anything after it
     // if it equals an already existing email, dont count it
     // else increment count
+
+    // unique email array holder
+    let uniqueEmails = [];
+
+    // iterate through the email array
+    for (let i = 0; i < emails.length; i++) {
+        // split each email by '@' 
+        let emailAddr = emails[i].split('@');
+
+        let localName = emailAddr[0];
+
+        let domainName = emailAddr[1];
+
+
+        // if localname has '+' sign, ignore it and everything after
+        if (localName.indexOf('+') > -1) {
+            // grab the index of '+'
+            let plusIndex = localName.indexOf('+');
+            // we update the localName to be itself minus the '+' and everything after
+            localName = localName.substring(0, plusIndex);
+        }
+
+        // if localname has period, ignore it
+        if (localName.indexOf('.') > -1) {
+            // let dotIndex = localName.indexOf('.');
+            // localName = localName.substring(0, dotIndex) + localName.substring(dotIndex + 1, localName.length);
+            localName = localName.replace(/[._]/g, '');
+        }
+
+        let email = localName + '@' + domainName;
+
+        if(!uniqueEmails.includes(email)) {
+            uniqueEmails.push(email);
+        }
+    }
+
+    return uniqueEmails.length;
 };
 
 module.exports = numUniqueEmails;
