@@ -20,6 +20,7 @@
         runSum.push(nums[i] + runSum[i-1]);
     }
     
+    // return running sum array
     return runSum;
 };
 
