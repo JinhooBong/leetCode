@@ -17,12 +17,8 @@ var smallerNumbersThanCurrent = function(nums) {
         // num tracker
         let numSmaller = 0;
         for (let j = 0; j < nums.length; j++) {
-            if (j === i) {
-                j++;
-            } else {
-                if (nums[j] < nums[i]) {
-                    numSmaller++;
-                }
+            if (nums[j] < nums[i]) {
+                numSmaller++;
             }
         }
         arrOfSmaller.push(numSmaller);
