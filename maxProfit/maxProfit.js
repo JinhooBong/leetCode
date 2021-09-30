@@ -18,18 +18,35 @@ var maxProfit = function(prices) {
     // iterate through rest of the array following same idea
 
 
-    // variable to keep track of max profit made
-    let maxProfit = 0;
+    // // variable to keep track of max profit made
+    // let maxProfit = 0;
 
+    // for (let i = 0; i < prices.length - 1; i++) {
+    //     // if we buy on i day, are there any i++ days where profit is maximum?
+    //     for (let j = i + 1; j < prices.length; j++) {
+    //         let profit = prices[j] - prices[i];
+    //         if (profit > maxProfit) {
+    //             maxProfit = profit;
+    //         }
+    //     }
+    // }
+
+    // return maxProfit;
+
+
+    // leetcode solution 
+    // runtime: O(n)
+    let minPrice = Number.MAX_SAFE_INTEGER;
+    let maxProfit = 0;
+    
     for (let i = 0; i < prices.length; i++) {
-        // if we buy on i day, are there any i++ days where profit is maximum?
-        for (let j = i + 1; j < prices.length; j++) {
-            if (prices[j] - prices[i] > maxProfit) {
-                maxProfit = prices[j] - prices[i];
-            }
+        if (prices[i] < minPrice) {
+            minPrice = prices[i];
+        } else if (prices[i] - minPrice > maxProfit) {
+            maxProfit = prices[i] - minPrice;
         }
     }
-
+    
     return maxProfit;
 };
 
