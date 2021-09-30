@@ -10,7 +10,27 @@
  * 
  */
 var maxProfit = function(prices) {
-    
+
+    // input: array of numbers, with each i position indicating the price of the stock on that day
+    // output: the maximum profit you can make, else return 0;
+
+    // grab the first value, see if any of the latter values can amount to a maximum profit
+    // iterate through rest of the array following same idea
+
+
+    // variable to keep track of max profit made
+    let maxProfit = 0;
+
+    for (let i = 0; i < prices.length; i++) {
+        // if we buy on i day, are there any i++ days where profit is maximum?
+        for (let j = i + 1; j < prices.length; j++) {
+            if (prices[j] - prices[i] > maxProfit) {
+                maxProfit = prices[j] - prices[i];
+            }
+        }
+    }
+
+    return maxProfit;
 };
 
 module.exports = maxProfit;
