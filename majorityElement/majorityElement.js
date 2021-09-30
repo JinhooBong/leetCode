@@ -12,11 +12,9 @@ var majorityElement = function(nums) {
     // output: the majority element
 
     // create an object to keep track of how many times the number appears
-    // grab the size of n/2
-    // if the number of times an element appears is greater than half then return that element
-
     let counterObj = {};
-
+        
+    // iterate through the array, and keep count of how many times each number appears
     for (let i = 0; i < nums.length; i++) {
         if (counterObj[nums[i]] === undefined) {
             counterObj[nums[i]] = 1;
@@ -25,8 +23,10 @@ var majorityElement = function(nums) {
         }
     }
 
+    // grab the size of n/2
     let half = Math.floor(nums.length / 2);
 
+    // iterate through counter object, and check to see which value is greater than half and return that value
     for (let key in counterObj) {
         if (counterObj[key] > half) {
             return parseInt(key);
