@@ -17,6 +17,26 @@ function ListNode(val, next) {
 }
 
 var splitListToParts = function(head, k) {
+  // input: a singly linked list
+  // output: the list split into k lists into an array
+
+  // array to store lists
+  let listArr = [];
+
+  // get length of list
+  let length = 0;
+
+  while(head.next !== null) {
+    length++;
+    head = head.next;
+  }
+
+  // divide length by k
+
+
+  // return list array
+  return listArr;
+
 
 };
 
