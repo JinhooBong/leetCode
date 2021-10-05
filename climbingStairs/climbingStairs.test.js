@@ -6,4 +6,12 @@ describe('Climbing Stairs', () => {
     expect(typeof climbStairs).toBe('function');
   });
 
+  it('Should be 2', () => {
+    expect(climbStairs(2)).toBe(2);
+  })
+
+  it('Should be 3', () => {
+    expect(climbStairs(3)).toBe(3);
+  })
+
 });
