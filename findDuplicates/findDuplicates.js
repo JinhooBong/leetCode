@@ -35,7 +35,6 @@ var findDuplicates = function(nums) {
 
     // return array
     return duplicates;
-
 };
 
 module.exports = findDuplicates;
