@@ -15,6 +15,51 @@
  */
 var numTeams = function(rating) {
     
+    // input: an array of numbers (that represent the rating of each solider)
+    // output: the number of combinations possible where
+    // i < j < k and rating[i] < rating[j] < rating[k] OR rating[i] > rating[j] > rating[k]
+
+    // constraint: has to be a team of 3
+
+    // iterate through the array
+    // create a count variable
+
+    // create an array 
+    // grab first element,
+    // iterate through rest of the array
+    // grab second element and check which one is greater 
+    // then iterate through rest of the array
+    // grab third elemtn 
+    // if the previous number was greater, then check for greater
+    // if previous was lesser, then check for lesser
+
+    let numOfTeams = 0;
+
+    for (let i = 0; i < rating.length; i++) {
+        let team = [];
+
+        let firstNum = rating[i];
+
+        for (let j = i + 1; j < rating.length; j++) {
+            if (rating[j] < firstNum) {
+                let secondNum = rating[j];
+                for (let k = j + 1; k < rating.length; k++) {
+                    if (rating[k] < secondNum) {
+                        numOfTeams++;
+                    }
+                }
+            } else if (rating [j] > firstNum) {
+                let secondNum = rating[j];
+                for (let k = j + 1; k < rating.length; k++) {
+                    if (rating[k] > secondNum) {
+                        numOfTeams++;
+                    }
+                }
+            }
+        }
+    }
+
+    return numOfTeams;
 };
 
 module.exports = numTeams;
