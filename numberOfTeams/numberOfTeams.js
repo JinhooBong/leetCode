@@ -21,29 +21,24 @@ var numTeams = function(rating) {
 
     // constraint: has to be a team of 3
 
-    // iterate through the array
     // create a count variable
-
-    // create an array 
-    // grab first element,
-    // iterate through rest of the array
-    // grab second element and check which one is greater 
-    // then iterate through rest of the array
-    // grab third elemtn 
-    // if the previous number was greater, then check for greater
-    // if previous was lesser, then check for lesser
-
     let numOfTeams = 0;
 
     for (let i = 0; i < rating.length; i++) {
-        let team = [];
-
+        // grab first element,
         let firstNum = rating[i];
 
+        // iterate through rest of the array
         for (let j = i + 1; j < rating.length; j++) {
+            // grab second element and check which one is greater 
             if (rating[j] < firstNum) {
+
                 let secondNum = rating[j];
+                // then iterate through rest of the array
                 for (let k = j + 1; k < rating.length; k++) {
+                    // if second element was less than first 
+                    // then check for third element to be lesser
+                    // if there is one, then thats a possible team
                     if (rating[k] < secondNum) {
                         numOfTeams++;
                     }
@@ -59,6 +54,7 @@ var numTeams = function(rating) {
         }
     }
 
+    // return count
     return numOfTeams;
 };
 
