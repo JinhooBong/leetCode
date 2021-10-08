@@ -12,6 +12,7 @@ describe('Number of Teams', () => {
 
     it('Should be 3', () => {
         expect(numTeams([2, 5, 3, 4, 1])).toBe(3);
+        // bc [2, 3, 4], [5, 4, 1], [5, 3, 1]
     })
 
     it('Should be 4', () => {
