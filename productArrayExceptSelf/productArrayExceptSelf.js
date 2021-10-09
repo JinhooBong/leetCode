@@ -12,6 +12,39 @@
  */
 var productExceptSelf = function(nums) {
     
+    // input: array
+    // output: array that has the product of all the elements in the array except the one in the curretn position
+
+    // create a result array
+    let productArr = [];
+
+    // for O(n) time
+    // use while loop
+    // have a counter
+    // while counter < nums.length
+    // if i = counter, skip
+    // else multiply
+
+    let counter = 0;
+
+    while (counter < nums.length) {
+        let product = 1;
+        for (let i = 0; i < nums.length; i++) {
+            if (i !== counter) {
+                product *= nums[i];
+            }
+        }
+        productArr.push(product);
+        counter++;
+    }
+
+    for (let i = 0; i < productArr.length; i++) {
+        if (productArr[i] === -0) {
+            productArr[i] = 0;
+        }
+    }
+    // return result array
+    return productArr;
 };
 
 module.exports = productExceptSelf;
