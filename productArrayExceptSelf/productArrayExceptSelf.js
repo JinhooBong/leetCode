@@ -19,25 +19,26 @@ var productExceptSelf = function(nums) {
     let productArr = [];
 
     // for O(n) time
-    // use while loop
+    
     // have a counter
-    // while counter < nums.length
-    // if i = counter, skip
-    // else multiply
-
     let counter = 0;
 
+    // use while loop
+    // while counter < nums.length
     while (counter < nums.length) {
         let product = 1;
         for (let i = 0; i < nums.length; i++) {
             if (i !== counter) {
+                // else multiply
                 product *= nums[i];
             }
+            // if i = counter, skip
         }
         productArr.push(product);
         counter++;
     }
 
+    // handling cases where 0 is negative
     for (let i = 0; i < productArr.length; i++) {
         if (productArr[i] === -0) {
             productArr[i] = 0;
