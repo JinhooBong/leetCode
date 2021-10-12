@@ -11,7 +11,13 @@
  * @param {number} n
  * @return {number}
  */
- var guessNumber = function(n) {
+var guessNumber = function(n) {
+
+  // input: n, a number that represents the range
+  // output: the target value
+
+  // if n = 1, return 1
+  if (n === 1)  return 1;
 
 };
 
