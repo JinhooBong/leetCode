@@ -12,4 +12,9 @@ describe('str Str implementation', () => {
     expect(strStr("aaaaa", "baa")).toBe(-1);
   })
 
+  it('Should return leetcode correct', () => {
+    expect(strStr("aaa", "aaaa")).toBe(-1);
+    expect(strStr("Mississippi", "issip")).toBe(4);
+  })
+
 });

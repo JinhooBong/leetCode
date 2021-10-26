@@ -17,22 +17,31 @@ var strStr = function(haystack, needle) {
   if (needle.length === 0) {
     return 0;
   }
+  if (needle.length > haystack.length) {
+    return -1;
+  }
 
   // iterate through haystack, and find index of first letter of needle
   // then for needle's length, we want to check if haystack contains it
   // if so, we return that first index
   // else, return -1
 
-  for (let i = 0; i < haystack.length; i++) {
-    if (haystack[i] === needle[0]) {
-      let index = i;
-      for (let j = 0; j < needle.length; j++) {
-        if (haystack[i] === needle[j]) {
-          // do nothing
-          i++;
-        }
-      }
-      return index;
+  // for (let i = 0; i < haystack.length; i++) {
+  //   if (haystack[i] === needle[0]) {
+  //     let index = i;
+  //     for (let j = 0; j < needle.length; j++) {
+  //       if (haystack[i] !== needle[j]) {
+  //         // do nothing
+  //         break;
+  //       }
+  //       i++;
+  //     }
+  //   }
+  // }
+
+  for (let i = 0; i <= haystack.length - needle.length; i++) {
+    if (needle === haystack.substring(i, i + needle.length)) {
+      return i;
     }
   }
   
