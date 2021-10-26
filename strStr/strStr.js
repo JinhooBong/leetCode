@@ -13,7 +13,30 @@
  * For the purpose of this problem, we will return 0 when needle is an empty string. This is consistent to C's strstr() and Java's indexOf().
  */
 var strStr = function(haystack, needle) {
-    
+  // if needle is an empty string, we return 0
+  if (needle.length === 0) {
+    return 0;
+  }
+
+  // iterate through haystack, and find index of first letter of needle
+  // then for needle's length, we want to check if haystack contains it
+  // if so, we return that first index
+  // else, return -1
+
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack[i] === needle[0]) {
+      let index = i;
+      for (let j = 0; j < needle.length; j++) {
+        if (haystack[i] === needle[j]) {
+          // do nothing
+          i++;
+        }
+      }
+      return index;
+    }
+  }
+  
+  return -1;
 };
 
 module.exports = strStr;
