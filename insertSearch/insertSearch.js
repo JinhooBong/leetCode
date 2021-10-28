@@ -8,20 +8,6 @@
  * You must write an algorithm with O(log n) runtime complexity.
  */
 var searchInsert = function(nums, target) {
-  // return the index if target is found
-
-  // let index = 0; 
-  // for (let i = 0; i < nums.length; i++) {
-  //   if (nums[i] === target) {
-  //     index = i;
-  //   } else if (nums[i] > target && nums[i-1] < target) {
-  //     index = i;
-  //   } else {
-  //     index = nums.length;
-  //   }
-  // } 
-  // return index;
-
   // iterate through the array
   // if the target is found, return that index
 
