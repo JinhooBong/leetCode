@@ -8,7 +8,15 @@
  * A subarray is a contiguous part of an array.
  */
 var maxSubArray = function(nums) {
-    
+    let result = 0;
+    let sum = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+      sum = Math.max(nums[i], sum + nums[i]);
+      result = Math.max(result, sum);
+    }
+
+    return result;
 };
 
 module.exports = maxSubArray;
