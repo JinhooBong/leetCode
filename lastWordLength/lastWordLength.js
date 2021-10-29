@@ -8,12 +8,6 @@
  * 
  */
 var lengthOfLastWord = function(s) {
-    // split up the given string
-    // get last word in array length
-
-    // while iterating through string
-    // if it's a space, ignore
-    // else save letters as a word
 
     // global word array variable
     let words = [];
@@ -21,12 +15,14 @@ var lengthOfLastWord = function(s) {
       // if its space, skip
       // if its not, then add it to a word and keep adding until space
       let word = '';
+
       if (s[i] !== ' ') {
         // while current position is not space, keep adding
         while (s[i] !== ' ' && i !== s.length - 1) {
           word += s[i];
           i++;
         }
+        // if it reaches end of length, check last letter to see if its space or letter
         if (s[i] !== ' ') {
           word += s[i];
         }
@@ -35,6 +31,7 @@ var lengthOfLastWord = function(s) {
       }
     }
 
+    // return the length of the last word in the array
     return words[words.length - 1].length;
 };
 
