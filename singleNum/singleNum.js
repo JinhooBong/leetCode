@@ -8,15 +8,13 @@
  * 
  */
 var singleNumber = function(nums) {
-    
+  
   // create an object
-  // iterate through array
-  // count how instances each elements appears
-  // return the one with 1
-
   let countObj = {};
 
+  // iterate through array
   for (let i = 0; i < nums.length; i++) {
+    // count how instances each elements appears
     if (countObj[nums[i]] === undefined) {
       countObj[nums[i]] = 1;
     } else {
@@ -25,6 +23,7 @@ var singleNumber = function(nums) {
   }
 
   for (let keys in countObj) {
+    // return the one with 1
     if (countObj[keys] === 1) {
       return parseInt(keys);
     }
