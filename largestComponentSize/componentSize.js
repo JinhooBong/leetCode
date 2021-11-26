@@ -5,3 +5,5 @@
  var largestComponentSize = function(nums) {
     
 };
+
+module.exports = largestComponentSize;
