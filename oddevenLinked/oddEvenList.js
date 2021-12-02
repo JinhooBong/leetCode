@@ -23,3 +23,5 @@
 var oddEvenList = function(head) {
     
 };
+
+module.exports = oddEvenList;
