@@ -11,28 +11,34 @@
  * @return {number}
  */
 var maxProduct = function(nums) {
-  // if our values are all positive, it's always going to be increasing thus, the max would be a product of all values
-
-  // if all values are negative, sign wil alternate
-
-
   // init max
-  let res = Math.max(...nums);
+  let maxProduct = Math.max(...nums);
   let currMin = 1;
   let currMax = 1;
 
+  // iterate through the array 
   for (const n of nums) {
+    // if n is 0, we want to reset bc any product * 0 would be 0
     if (n === 0) {
        currMin = 1;
        currMax = 1;
     } 
+
+    // we calc what the product of the array including current n is
     let temp = currMax * n;
-    currMax = Math.max(n * currMax, n * currMin, n);
+
+    // we set max to be either including n
+    // if its negative, times it by currMin,
+    // or case where n is the biggest number
+    currMax = Math.max(temp, n * currMin, n);
     currMin = Math.min(temp, n * currMin, n);
-    res = Math.max(res, currMax);    
+    
+    // then we set maxProduct to be the max between what we set initially, vs current Max
+    maxProduct = Math.max(maxProduct, currMax);    
   }
   
-  return res;
+  // return maxProduct
+  return maxProduct;
 };
 
 module.exports = maxProduct;
