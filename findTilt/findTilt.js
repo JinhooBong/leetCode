@@ -23,7 +23,30 @@
  * 
  */
 var findTilt = function(root) {
+  // we want to traverse through the tree starting from the root
+  // once we reach the last child, we set those values to 0 because they have no children, thus the tilt is 0. 
+  // we then return the value of those children and then find the absolute difference between them 
+  // until we reach back to the top
+  let tilt = 0;
+
+  let innerTilt = (tree_root) => {
+    if (tree_root === null) return 0;
     
+    if (tree_root.left === null && tree_root.right === null) return tree_root.val;
+    
+    // console.log('val', tree_root.val);
+
+    let left = innerTilt(tree_root.left);
+    let right = innerTilt(tree_root.right);
+
+    tilt += Math.abs(left - right);
+
+    return tree_root.val + left + right;
+  }
+
+  innerTilt(root);
+
+  return tilt;
 };
 
 module.exports = findTilt;
