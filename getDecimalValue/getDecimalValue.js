@@ -28,7 +28,7 @@ var getDecimalValue = function(head) {
   // convet to integer
   binaryDigit = parseInt(binaryDigit);
 
-  // while digit is greater than 0, we mod and then divide by 10
+  // while digit is greater/eq to 1, we mod and then divide by 10
   let decimalDigit = 0;
   let base = 1;
 
@@ -39,8 +39,17 @@ var getDecimalValue = function(head) {
     binaryDigit = Math.floor(binaryDigit / 10);
   }
 
-
   return decimalDigit;
+
+
+  // leetcode solution
+  // let num = head.val;
+  // while(head.next !== null) {
+  //     num = num * 2 + head.next.val;
+  //     head = head.next;
+  // }
+    
+  // return num;
 
 };
 
