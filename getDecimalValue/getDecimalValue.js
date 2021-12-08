@@ -18,7 +18,30 @@
  * Return the decimal value of the number in the linked list.
  */
 var getDecimalValue = function(head) {
-    
+  // grab all digits until head ends
+  let binaryDigit = '';
+
+  for (let i = 0; i < head.length; i++) {
+    binaryDigit += head[i];
+  }
+
+  // convet to integer
+  binaryDigit = parseInt(binaryDigit);
+
+  // while digit is greater than 0, we mod and then divide by 10
+  let decimalDigit = 0;
+  let base = 1;
+
+  while (binaryDigit >= 1) {
+    let curr = binaryDigit % 10;
+    decimalDigit += (curr * base);
+    base *= 2;
+    binaryDigit = Math.floor(binaryDigit / 10);
+  }
+
+
+  return decimalDigit;
+
 };
 
 module.exports = getDecimalValue;
