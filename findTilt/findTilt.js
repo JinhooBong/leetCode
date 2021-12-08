@@ -30,15 +30,16 @@ var findTilt = function(root) {
   let tilt = 0;
 
   let innerTilt = (tree_root) => {
+    // if tree is null return 0;
     if (tree_root === null) return 0;
     
     if (tree_root.left === null && tree_root.right === null) return tree_root.val;
     
-    // console.log('val', tree_root.val);
-
+    // we want to grab tilts for left & right subtrees
     let left = innerTilt(tree_root.left);
     let right = innerTilt(tree_root.right);
 
+    // the absolute difference
     tilt += Math.abs(left - right);
 
     return tree_root.val + left + right;
