@@ -16,18 +16,35 @@ var canReach = function(arr, start) {
     // return a boolean value whether we can reach an index in the array where the value is 0 given the specific conditions
 
     // if the array doesn't contain a 0, then return false
-    if (!arr.includes(0)) return false;
+    // if (!arr.includes(0)) return false;
 
-    let dfs = (arr, start, count) => {
-      if (start < 0 || start > arr.length) return false;
-      if (count >= arr.length) return false;
-      if (arr[start] === 0) return true;
+    // let dfs = (arr, start, count) => {
+    //   if (start < 0 || start > arr.length) return false;
+    //   if (count >= arr.length) return false;
+    //   if (arr[start] === 0) return true;
 
-      return dfs(arr, start + arr[start], count + 1) ||
-        dfs(arr, start - arr[start], count + 1)
+    //   return dfs(arr, start + arr[start], count + 1) ||
+    //     dfs(arr, start - arr[start], count + 1)
+    // }
+
+    // return dfs(arr, start, 0);
+
+    let len = arr.length;
+
+    const go = (startIndex) => {
+        if (arr[startIndex] == '*' || startIndex == undefined) return
+        else{
+          if(startIndex >= 0 && startIndex < len) {
+            if (+arr[startIndex] == 0) return true;
+            let value = arr[startIndex];
+            arr[startIndex] = '*';
+            return go(value + startIndex) || go(startIndex - value)
+          }
+          return   
+        }
     }
-
-    return dfs(arr, start, 0);
+    
+    return go(start) || false;
 };
 
 module.exports = canReach;
