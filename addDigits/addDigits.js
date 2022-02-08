@@ -10,32 +10,46 @@ var addDigits = function(num) {
   // take each digit from num variable
   // and then add it to sum variable
 
-  let sum = 0;
+  // let sum = 0;
 
-  // if number is one digit, sum will be the number
-  if (num < 10) {
-    return num;
-  } else {
-    sum = helper(num);
-    while (sum > 10) {
-      sum = helper(sum);
-    }
-  }
+  // // if number is one digit, sum will be the number
+  // if (num < 10) {
+  //   return num;
+  // } else {
+  //   sum = helper(num);
+  //   while (sum > 10) {
+  //     sum = helper(sum);
+  //   }
+  // }
 
-  return sum;
+  // return sum;
+
+  let digitalRoot = 0;
+
+  while (num > 0) {
+    digitalRoot += num % 10;
+    num = Math.floor(num / 10);
+    
+    if (num == 0 && digitalRoot > 9) {
+        num = digitalRoot;
+        digitalRoot = 0;  
+    }    
+  }     
+
+  return digitalRoot;
 };
 
-let helper = (num) => {
-  let sum = 0;
+// let helper = (num) => {
+//   let sum = 0;
 
-  while (num >= 10) {
-    let digit = num % 10;
-    sum += digit;
-    num = Math.floor(num / 10);
-  }
+//   while (num >= 10) {
+//     let digit = num % 10;
+//     sum += digit;
+//     num = Math.floor(num / 10);
+//   }
 
-  sum += num; 
-  return sum;
-}
+//   sum += num; 
+//   return sum;
+// }
 
 module.exports = addDigits;
